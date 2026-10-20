@@ -1,9 +1,9 @@
 import { Drug, Pharmacy } from "./pharmacy";
 
-const updateOnce = (name, expiresIn, benefit) =>
+export const updateOnce = (name, expiresIn, benefit) =>
   new Pharmacy([new Drug(name, expiresIn, benefit)]).updateBenefitValue()[0];
 
-const updateDays = (drug, days) => {
+export const updateDays = (drug, days) => {
   const pharmacy = new Pharmacy([drug]);
   const history = [];
   for (let day = 0; day < days; day++) {

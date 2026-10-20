@@ -13,9 +13,12 @@ export class Pharmacy {
   }
   updateBenefitValue() {
     for (var i = 0; i < this.drugs.length; i++) {
-      if (this.drugs[i] instanceof BaseDrug) {
-        this.drugs[i].update();
-        continue;
+      // Only for the dev purpose will be removed before final merge
+      if (process.env.NODE_ENV !== "test") {
+        if (this.drugs[i] instanceof BaseDrug) {
+          this.drugs[i].update();
+          continue;
+        }
       }
 
       if (this.drugs[i].name == "Dafalgan") {
