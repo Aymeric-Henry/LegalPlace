@@ -24,6 +24,7 @@ export class BaseDrug {
   }
 
   updateExpiresIn() {
+    // Weird behavior same as the original but need clarification can be problematic for long stale drugs
     // if (this.expiresIn <= 0) return;
     this.expiresIn -= 1;
   }
