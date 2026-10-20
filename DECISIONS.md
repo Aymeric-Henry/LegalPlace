@@ -14,6 +14,7 @@ This file records the choices made while doing the take-home test described in [
 - **[18:24]** Start the test after reading the specification
 - **[18:40]** Push the old JS version and the test suite
 - **[18:58]** The base class is done and the tests still give the same results. Start a new branch to open a PR; it is the first PR of the refactor stack.
+- **[19:30]** Add the Fervex class. It will be the example PR for creating a skill, or the baseline for a prompt.
 
 ## Decision log
 
@@ -65,6 +66,12 @@ Use one entry per decision, in this format:
   3. Then refactor in small PRs, one at a time.
 - **Why:** In real conditions, we can't be sure how long the refactor will take, or whether other input will come in along the way. Shipping the product change first means the feature is delivered no matter what. Small refactor PRs can then follow, each covered by the tests.
 - **Alternatives considered:** Refactor first and add Dafalgan on top of the clean code. Rejected because that blocks the feature until the refactor is finished.
+
+### 006 — Fervex as the reference migration PR
+
+- **Decision:** Migrate Fervex first, by hand. Its PR becomes the example for a skill, or the baseline for a prompt, used to migrate the remaining drugs.
+- **Why:** Fervex's rules are straightforward, which makes it a clean, easy-to-follow example of one drug migration.
+- **Alternatives considered:** _TBD_
 
 ## Out of scope
 
