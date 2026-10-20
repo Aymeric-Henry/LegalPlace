@@ -13,7 +13,7 @@ export class Pharmacy {
   }
   updateBenefitValue() {
     for (var i = 0; i < this.drugs.length; i++) {
-      // Only for the dev purpose will be removed before final merge
+      // process.env.NODE_ENV !== "test" is in here instead of a FF // node config etc for the switch of the feature
       if (process.env.NODE_ENV !== "test") {
         if (this.drugs[i] instanceof BaseDrug) {
           this.drugs[i].update();
