@@ -8,19 +8,19 @@ export class BaseDrug {
   }
 
   update() {
-    this.updateExpiresIn();
     this.updateBenefitValue();
+    this.updateExpiresIn();
   }
 
   updateBenefitValue() {
-    if (this.benefit > MAX_BENEFIT || this.benefit === MIN_BENEFIT) return;
-    if (this.expiresIn >= 0) {
+    if (this.benefit > MAX_BENEFIT) return;
+    if (this.expiresIn > 0) {
       this.benefit -= 1;
     }
     if (this.expiresIn < 0) {
       this.benefit -= 2;
     }
-    this.benefit = Math.max(MIN_BENEFIT, this.benefit);
+    this.benefit = Math.min(Math.max(MIN_BENEFIT, this.benefit), MAX_BENEFIT);
   }
 
   updateExpiresIn() {
