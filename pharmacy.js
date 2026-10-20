@@ -1,3 +1,4 @@
+import { BaseDrug } from "./Drug/base-drug.class";
 export class Drug {
   constructor(name, expiresIn, benefit) {
     this.name = name;
@@ -12,6 +13,11 @@ export class Pharmacy {
   }
   updateBenefitValue() {
     for (var i = 0; i < this.drugs.length; i++) {
+      if (this.drugs[i] instanceof BaseDrug) {
+        this.drugs[i].update();
+        continue;
+      }
+
       if (this.drugs[i].name == "Dafalgan") {
         this.drugs[i].expiresIn -= 1;
 
@@ -23,7 +29,7 @@ export class Pharmacy {
           }
           this.drugs[i].benefit = Math.max(0, this.drugs[i].benefit);
         }
-        break;
+        continue;
       }
 
       if (
