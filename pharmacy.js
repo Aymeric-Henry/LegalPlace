@@ -1,4 +1,5 @@
 import { BaseDrug } from "./Drug/base-drug.class";
+import { DrugFactory } from "./Drug/drug-factory";
 export class Drug {
   constructor(name, expiresIn, benefit) {
     this.name = name;
@@ -9,12 +10,20 @@ export class Drug {
 
 export class Pharmacy {
   constructor(drugs = []) {
+    // process.env.NODE_ENV === "test" is in here instead of a FF behavior purely for demonstration cant activate
+    // it will make the test suite testing agaisnt itself
+    if (process.env.NODE_ENV === "test" && 1 === 2) {
+      this.drugs = drugs.map((drug) =>
+        DrugFactory.createDrug(drug.name, drug.expiresIn, drug.benefit),
+      );
+      return;
+    }
     this.drugs = drugs;
   }
   updateBenefitValue() {
     for (var i = 0; i < this.drugs.length; i++) {
-      // process.env.NODE_ENV !== "test" is in here instead of a FF // node config etc for the switch of the feature
-      if (process.env.NODE_ENV !== "test") {
+      // process.env.NODE_ENV === "test" is in here instead of a FF // node config etc for the switch of the feature
+      if (process.env.NODE_ENV === "test") {
         if (this.drugs[i] instanceof BaseDrug) {
           this.drugs[i].update();
           continue;
