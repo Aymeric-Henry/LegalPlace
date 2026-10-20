@@ -25,7 +25,7 @@ This file records the choices made while doing the take-home test described in [
 - **[18:58]** The base class is done and the tests still give the same results. Start a new branch to open a PR; it is the first PR of the refactor stack.
 - **[19:30]** Add the Fervex class. It will be the example PR for creating a skill, or the baseline for a prompt.
 - **[19:41]** Add the Factory class. to demonstrate how we will use the difference of the .
-- **[19: 54]** Finish read me 
+- **[19:54]** Finish read me 
 ## Decision log
 
 Use one entry per decision, in this format:
