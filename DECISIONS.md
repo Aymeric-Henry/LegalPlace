@@ -26,6 +26,7 @@ This file records the choices made while doing the take-home test described in [
 - **[19:30]** Add the Fervex class. It will be the example PR for creating a skill, or the baseline for a prompt.
 - **[19:41]** Add the Factory class. to demonstrate how we will use the difference of the .
 - **[19:54]** Finish read me 
+- **[20:03]** auto review fix some mistake 
 ## Decision log
 
 Use one entry per decision, in this format:

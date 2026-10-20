@@ -17,7 +17,7 @@ export class BaseDrug {
     if (this.expiresIn > 0) {
       this.benefit -= 1;
     }
-    if (this.expiresIn < 0) {
+    if (this.expiresIn <= 0) {
       this.benefit -= 2;
     }
     this.benefit = Math.min(Math.max(MIN_BENEFIT, this.benefit), MAX_BENEFIT);
