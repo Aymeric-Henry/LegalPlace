@@ -67,3 +67,6 @@ Use one entry per decision, in this format:
 
 - **Decision:** Migrate Fervex first, by hand. Its PR becomes the example for a skill, or the baseline for a prompt, used to migrate the remaining drugs.
 - **Why:** Fervex's rules are straightforward, which makes it a clean, easy-to-follow example of one drug migration.
+
+### Time dedicated 
+~1H30
